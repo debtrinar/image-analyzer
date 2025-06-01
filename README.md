@@ -3,12 +3,15 @@ Enter any image URL in the format of ".jpg" or ".jpeg" to get an AI-generated de
 
 # Project Structure
 You have to make 3 separate folders in the root project folder, name "app", "templates", "static".
+
 In the app folder you have to add the following files that I have shared above:
 1. caption_generator.py
 2. main.py
 3. utils.py
 4. yolo_detector.py
+
 For the templates folder add only the "index.html" file 
+
 For the static folder add only the "style.css" file
 
 # How to Run
