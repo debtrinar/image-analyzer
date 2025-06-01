@@ -2,8 +2,8 @@
 Enter any image URL in the format of ".jpg" or ".jpeg" to get an AI-generated description and detect objects within the image using YOLO. The app also shows image metadata like size and dimensions, and displays the image with bounding boxes highlighting detected objects.
 
 # Project Structure
-You have to make 3 separate folders in the root project folder, name "app", "templates", "static"
-In the app folder you have to add the following files that i have shared above:
+You have to make 3 separate folders in the root project folder, name "app", "templates", "static".
+In the app folder you have to add the following files that I have shared above:
 1. caption_generator.py
 2. main.py
 3. utils.py
