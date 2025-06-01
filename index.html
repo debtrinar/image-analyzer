@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Image Analyzer</h1>
+        <form action="/analyze" method="post">
+            <input type="text" name="image_url" placeholder="Enter image URL" required />
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>Description:</h2>
+            <p>{{ result.description }}</p>
+
+            {% if result.metadata %}
+            <h2>Metadata:</h2>
+            <ul>
+                <li><strong>Format:</strong> {{ result.metadata.format or 'N/A' }}</li>
+                <li><strong>Mode:</strong> {{ result.metadata.mode or 'N/A' }}</li>
+                <li><strong>Dimensions:</strong> {{ result.metadata.width }} × {{ result.metadata.height }} px</li>
+                <li><strong>Size:</strong> {{ result.metadata.size_kb or 'Unknown' }} KB</li>
+            </ul>
+            {% endif %}
+
+            <h2>Objects Detected:</h2>
+            <ul>
+                {% for obj in result.objects %}
+                <li>{{ obj.name }} ({{ '%.2f'|format(obj.confidence * 100) }}%)</li>
+                {% endfor %}
+            </ul>
+
+            <h2>Analyzed Image with Detections:</h2>
+            <img src="{{ result.output_image }}" alt="Detected Image" style="max-width: 100%;" />
+        </div>
+        {% elif error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
