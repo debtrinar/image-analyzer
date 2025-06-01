@@ -17,3 +17,6 @@ For the static folder add only the "style.css" file
 3. Run the app with:
    uvicorn app.main:app --reload
 4. Open your browser at http://localhost:8000 and enter an image URL to analyze.
+
+# Output
+The look of website is uploaded by the name as "output 1" and "output 2"
