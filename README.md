@@ -1,5 +1,5 @@
 # Image analyzer Web application
-Enter any image URL to get an AI-generated description and detect objects within the image using YOLO. The app also shows image metadata like size and dimensions, and displays the image with bounding boxes highlighting detected objects.
+Enter any image URL to get an AI-generated description and detect objects within the image using YOLO. The app also shows image metadata like size and dimensions, and displays the image with bounding boxes highlighting detected objects. The format for the url must be in ".jpg" or ".jpeg" form.
 
 # Project Structure
 You have to make 3 separate folders in the root project folder, name "app", "templates", "static"
